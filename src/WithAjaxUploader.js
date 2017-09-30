@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getDisplayName } from 'javascript-utils/lib/react';
+import { getDisplayName } from './utils';
 import { getUploadsByState } from './selector';
 import { upload, deleteUpload, loadUploads, unloadUploads } from './actions';
 

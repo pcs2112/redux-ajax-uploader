@@ -17,3 +17,11 @@ export const formatBytes = (bytes, decimals = 0) => {
 
   return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
 };
+
+/**
+ * Returns the display name of a React components.
+ * @param {Object} WrappedComponent
+ * @returns {String}
+ */
+export const getDisplayName = (WrappedComponent) =>
+  WrappedComponent.displayName || WrappedComponent.name || 'Component';
