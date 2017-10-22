@@ -23,7 +23,7 @@ export const withAjaxUploader = (WrappedComponent, apiClient) => {
       unloadUploads: PropTypes.func.isRequired,
       formFieldName: PropTypes.string,
       maxUploadSize: PropTypes.number.isRequired
-    }
+    };
 
     static defaultProps = {
       uploadsMaxLimit: 3,
@@ -31,7 +31,7 @@ export const withAjaxUploader = (WrappedComponent, apiClient) => {
       uploading: false,
       uploads: [],
       destroyOnUnmount: true
-    }
+    };
 
     constructor(props) {
       super(props);
