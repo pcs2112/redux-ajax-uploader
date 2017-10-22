@@ -30,7 +30,9 @@ export const withAjaxUploader = (WrappedComponent, apiClient) => {
       uploadsMinLimit: 0,
       uploading: false,
       uploads: [],
-      destroyOnUnmount: true
+      destroyOnUnmount: true,
+      formFieldName: undefined,
+      error: undefined
     };
 
     constructor(props) {
@@ -48,8 +50,10 @@ export const withAjaxUploader = (WrappedComponent, apiClient) => {
       }
     }
 
-    onUpload(acceptedFiles, rejectedFiles) {
-      const { uploading, uploads, uploadsMaxLimit, onUpload } = this.props;
+    onUpload(acceptedFiles, rejectedFiles) { // eslint-disable-line
+      const {
+        uploading, uploads, uploadsMaxLimit, onUpload
+      } = this.props;
       if (uploading || uploads.length >= uploadsMaxLimit) {
         return false;
       }
@@ -66,7 +70,7 @@ export const withAjaxUploader = (WrappedComponent, apiClient) => {
       const deleteEnabled = uploadsMinLimit < 1 || (uploadsMinLimit > 0 && uploads && uploads.length > uploadsMinLimit);
 
       return (
-        <WrappedComponent { ...this.props } onUpload={this.onUpload} deleteEnabled={deleteEnabled} />
+        <WrappedComponent {...this.props} onUpload={this.onUpload} deleteEnabled={deleteEnabled} />
       );
     }
   }

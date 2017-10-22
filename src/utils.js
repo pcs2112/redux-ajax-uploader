@@ -15,7 +15,7 @@ export const formatBytes = (bytes, decimals = 0) => {
   const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
   const i = Math.floor(Math.log(bytes) / Math.log(k));
 
-  return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+  return `${parseFloat((bytes / (k ** i)).toFixed(dm))} ${sizes[i]}`;
 };
 
 /**
@@ -23,5 +23,5 @@ export const formatBytes = (bytes, decimals = 0) => {
  * @param {Object} WrappedComponent
  * @returns {String}
  */
-export const getDisplayName = (WrappedComponent) =>
+export const getDisplayName = WrappedComponent =>
   WrappedComponent.displayName || WrappedComponent.name || 'Component';

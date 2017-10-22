@@ -21,9 +21,7 @@ const addUpload = (uploads, upload) => {
   return newUploads;
 };
 
-const filterUploads = (uploads, id) => {
-  return Array.isArray(uploads) ? uploads.filter((upload) => upload.id !== id) : [];
-};
+const filterUploads = (uploads, id) => (Array.isArray(uploads) ? uploads.filter(upload => upload.id !== id) : []);
 
 const uploadReducer = (state, action) => {
   switch (action.type) {
@@ -83,10 +81,11 @@ export default (state = {}, action = {}) => {
           uploads: action.uploads || []
         }
       };
-    case UNLOAD_UPLOADS:
+    case UNLOAD_UPLOADS: {
       const newState = { ...state, [action.stateName]: null };
-      delete(newState[action.stateName]);
+      delete (newState[action.stateName]);
       return newState;
+    }
     default:
       return state;
   }

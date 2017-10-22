@@ -21,6 +21,16 @@
     "build": "yarn run build:lib",
     "build:lib": "babel src --out-dir lib"
   },
+  "dependencies": {
+    "prop-types": "^15.5.10",
+    "react": "^15.5.4",
+    "react-dom": "^15.0.0",
+    "react-redux": "^5.0.6",
+    "redux": "^3.0.4",
+    "redux-form": "^7.1.1",
+    "redux-thunk": "^2.1.0",
+    "reselect": "^3.0.1"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.23.1",
@@ -39,14 +49,6 @@
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.4.0",
     "mocha": "^4.0.1",
-    "prop-types": "^15.5.10",
-    "react": "^15.5.4",
-    "react-dom": "^15.0.0",
-    "react-redux": "^5.0.6",
-    "redux": "^3.0.4",
-    "redux-form": "^7.1.1",
-    "redux-thunk": "^2.1.0",
-    "reselect": "^3.0.1",
     "webpack": "^3.8.1"
   }
 }
