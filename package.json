@@ -3,7 +3,7 @@
   "description": "High order component to display flash messages.",
   "author": "Vince Chavez <vchavez92780@gmail.com> (http://github.com/pcs2112)",
   "license": "MIT",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "repository": {
     "type": "git",
     "url": "https://github.com/pcs2112/redux-ajax-uploader"
