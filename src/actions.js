@@ -100,7 +100,17 @@ export const deleteUpload = (apiClient, deleteUploadUrl, stateName, formFieldNam
       id: uploadId
     });
 
-    apiClient.post(`${deleteUploadUrl}/${uploadId}`)
+    dispatch({
+      type: DELETE_UPLOAD_SUCCESS,
+      stateName,
+      id: uploadId
+    });
+
+    if (formFieldName) {
+      dispatch(updateFormField(stateName, formFieldName));
+    }
+
+    /* apiClient.post(`${deleteUploadUrl}/${uploadId}`)
       .then(() => {
         dispatch({
           type: DELETE_UPLOAD_SUCCESS,
@@ -114,7 +124,7 @@ export const deleteUpload = (apiClient, deleteUploadUrl, stateName, formFieldNam
       })
       .catch((err) => {
         dispatch(triggerError(DELETE_UPLOAD_FAIL, stateName, err.message));
-      });
+      }); */
   };
 
 /**
